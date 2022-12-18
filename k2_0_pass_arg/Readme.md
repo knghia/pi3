@@ -14,6 +14,9 @@ $ sudo insmod pass_arg.ko valueETX=14 nameETX="EmbeTronicX" arr_valueETX=100,102
 $ /sys/module/pass_arg/parameters/cb_valueETX
 ``` 
 ### 2.2 New value
+
+![image info](./Img/call_back_parameters.png)
+
 ```shell
 $ sudo su
 $ echo 20 > /sys/module/pass_arg/parameters/cb_valueETX
