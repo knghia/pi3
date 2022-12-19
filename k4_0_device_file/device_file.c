@@ -2,6 +2,7 @@
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/types.h>
+#include <linux/fs.h>
 
 // Declare major & minor number
 dev_t dev = MKDEV(11, 0);
@@ -29,6 +30,6 @@ module_exit(end_func);
 
 MODULE_AUTHOR("KN");
 MODULE_LICENSE("GLP");
-MODULE_DESCRIPTION("Create device file");
+MODULE_DESCRIPTION("Major & minor");
 MODULE_VERSION("0.2");
 

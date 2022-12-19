@@ -1,4 +1,4 @@
-obj-m += create_device_file.o
+obj-m += date_device_file.o
 KDIR = /lib/modules/$(shell uname -r)/build
 all:
 	make -C $(KDIR)  M=$(shell pwd) modules
