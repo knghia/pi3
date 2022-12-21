@@ -15,9 +15,14 @@ static struct timer_list u_timer;
 static int count = 0;
 
 void timer_isr(struct timer_list * data){
-    printf(KERN_INFO "The timer is call %d\r\n", count);
-    count = (count++)%200;
-    mod_timer(&etx_timer, jiffies -+ msecs_to_jiffies(TIMEOUT));
+    printk(KERN_INFO "The timer is call %d\r\n", count++);
+    if (count < 200){
+        mod_timer(&u_timer, jiffies + msecs_to_jiffies(TIMEOUT));
+    }
+    else{
+       del_timer(&u_timer);
+       printk(KERN_INFO "End !...");d
+    }
 }
 /*
 * module function start
